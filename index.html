@@ -101,19 +101,18 @@
           <div class="col-md-8">
             <div class="jumbotron jumbotron-asphalt text-centered">
               <h1>User Info</h1>
-              <div class="col-md-3"></div>
-              <div class="col-md-6" center>
-
                 <input type="text" class="form-control login-field" value="" placeholder="Enter your name" id="fname">
                 <input type="text" class="form-control login-field" value="" placeholder="Income" id="income">
                 <input type="text" class="form-control login-field" value="" placeholder="Expense" id="expense">
                 <a class="btn btn-block btn-lg btn-info" onclick="click()">Submit</a>
                 <script>
                   function click(){
+                    var income = document.getElementById('income').value;
+                    var expense = document.getElementById('expense').value;
+                    var change = income-expense;
 
                   }
                 </script>
-              </div>
             </div>
           </div>
           <div class="col-md-2"></div>
