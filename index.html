@@ -5,7 +5,7 @@
     <title>8Finance</title>
     <meta name="description" content="Helping users manage stocks and provide personal financial solutions."/>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">x
     <!-- Loading Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -20,6 +20,10 @@
       <script src="dist/js/vendor/html5shiv.js"></script>
       <script src="dist/js/vendor/respond.min.js"></script>
     <![endif]-->
+    <link rel=stylesheet href="style.css" type="text/css" media=screen>
+    <script src='http://d3js.org/d3.v3.min.js' charset="utf-8"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js' charset="utf-8"></script>
+
   </head>
   <body>
     <header>
@@ -46,6 +50,7 @@
         </div><!-- /.container-fluid -->
       </nav>
     </header>
+
   <div class="container">
     <section>
         <div class="row">
@@ -63,10 +68,117 @@
         <div class="col-md-2"></div>
         <div class="col-md-8">
           <div class="jumbotron jumbotron-asphalt text-centered">
-            <div id="chartdiv" style="width:100%; height:400px;"></div>
+
           </div>
         </div>
         <div class="col-md-2"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="jumbotron jumbotron-asphalt text-centered">
+            <p> Apple Inc. (AAPL)</p>
+            <div id='sp1'></div>
+            <script>
+              var price = ((Math.random() * 300.00) + 0.00).toFixed(2);
+
+              document.getElementById('sp1').innerHTML = "Stock Price: "+price;
+            </script>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="jumbotron jumbotron-asphalt text-centered">
+            <p> Microsoft Corporation (MSFT)</p>
+            <div id='sp2'></div>
+            <script>
+              var price = ((Math.random() * 300.00) + 0.00).toFixed(2);
+
+              document.getElementById('sp2').innerHTML = "Stock Price: "+price;
+            </script>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="jumbotron jumbotron-asphalt text-centered">
+            <p> Tesla Motors (TSLA)</p>
+            <div id='sp3'></div>
+            <script>
+              var price = ((Math.random() * 300.00) + 0.00).toFixed(2);
+
+              document.getElementById('sp3').innerHTML = "Stock Price: "+price;
+            </script>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="jumbotron jumbotron-asphalt text-centered">
+            <p> Chipotle Mexican Grill (CMG)</p>
+            <div id='sp4'></div>
+            <script>
+              var price = ((Math.random() * 300.00) + 0.00).toFixed(2);
+
+              document.getElementById('sp4').innerHTML = "Stock Price: "+price;
+            </script>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="jumbotron jumbotron-asphalt text-centered">
+            <p> Pandora Media Inc (P)</p>
+            <div id='sp5'></div>
+            <script>
+              var price = ((Math.random() * 300.00) + 0.00).toFixed(2);
+
+              document.getElementById('sp5').innerHTML = "Stock Price: "+price;
+            </script>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="jumbotron jumbotron-asphalt text-centered">
+            <p> Alphabet Inc Class C (GOOG)</p>
+            <div id='sp6'></div>
+            <script>
+              var price = ((Math.random() * 300.00) + 0.00).toFixed(2);
+
+              document.getElementById('sp6').innerHTML = "Stock Price: "+price;
+            </script>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+      <div class="col-md-4">
+        <div class="jumbotron jumbotron-asphalt text-centered">
+          <p> Alibaba Group Holding LTD (BABA)</p>
+          <div id='sp7'></div>
+          <script>
+            var price = ((Math.random() * 300.00) + 0.00).toFixed(2);
+
+            document.getElementById('sp7').innerHTML = "Stock Price: "+price;
+          </script>
+        </div>
+      </div>
+    <div class="col-md-4">
+      <div class="jumbotron jumbotron-asphalt text-centered">
+        <p> Wells Fargo & Co(WFC)</p>
+        <div id='sp8'></div>
+        <script>
+          var price = ((Math.random() * 300.00) + 0.00).toFixed(2);
+
+          document.getElementById('sp8').innerHTML = "Stock Price: "+price;
+        </script>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="jumbotron jumbotron-asphalt text-centered">
+        <p> Alphabet Inc Class C (GOOG)</p>
+        <div id='sp9'></div>
+        <script>
+          var price = ((Math.random() * 300.00) + 0.00).toFixed(2);
+
+          document.getElementById('sp9').innerHTML = "Stock Price: "+price;
+        </script>
+      </div>
+    </div>
+  </div>
+</div>
     <!-- Load JS here for greater good =============================-->
     <script src="js/jquery-1.11.3.min.js"></script>
     <script src="js/flat-ui.min.js"></script>
