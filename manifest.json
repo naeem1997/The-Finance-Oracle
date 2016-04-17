@@ -1,0 +1,12 @@
+{
+    "name": "The Finance Oracle",
+    "description": "Helping users manage stocks and provide personal financial solutions.",
+    "version": "0.0.0.1",
+    "permissions" : ["management"],
+    "chrome_url_overrides" : {
+        "newtab": "stocks.html",
+        "newtab": "oracle.html",
+        "newtab": "index.html"
+    },
+    "manifest_version": 2
+ }
