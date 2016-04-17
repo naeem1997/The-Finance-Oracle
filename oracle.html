@@ -67,13 +67,14 @@
       #main {
           text-align: center;
           width: 600px;
-          height: 300px;
           margin: 0 auto;
           border-radius: 5px;
-          font-size: 72px;
       }
       #oracle {
-        font-size: 72px;
+        font-size: 36px;
+      }
+      #oracle:hover {
+        background-color: #79CDCD;
       }
       a:hover {
           background-color: #79CDCD;
@@ -127,7 +128,15 @@
           <div class="col-md-8">
             <div class="jumbotron jumbotron-asphalt text-centered">
               <div id="main">
-                  <p id="oracle"><a href="#" onclick="window.location.reload(true);return false;">Click (or Tap) Here!</a></p>
+                  <p id="oracle" onclick="myFunction()">Click (or Tap) Here!</p>
+                  <script>
+                    function myFunction(){
+                        var text = ["Invest money in property","Deposit certain percentage of your money in savings!","Priortize interests, mortgages, loans, and things that affect your credit score!","Ensure you have substantial amount for your 401k!","Focus your purchasing power to the things needed than the things desired!","Proportion a good amount of your income for familial needs!"];
+                        var num = (Math.floor((Math.random() * 5) + 0));
+                        document.getElementById("oracle").innerHTML = text[num];
+                    }
+                  </script>
+
               </div>
             </div>
           </div>

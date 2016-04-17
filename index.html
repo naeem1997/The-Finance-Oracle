@@ -63,29 +63,6 @@
       <script src="dist/js/vendor/html5shiv.js"></script>
       <script src="dist/js/vendor/respond.min.js"></script>
     <![endif]-->
-    <style type="text/css">
-      #main {
-          text-align: center;
-          width: 600px;
-          height: 300px;
-          margin: 0 auto;
-          border-radius: 5px;
-          font-size: 36px;
-      }
-      a:hover {
-          background-color: #EEE;
-      }
-      @keyframes fadeAndScale {
-          from {
-              opacity: 0;
-              transform: scale(.9, .9);
-          }
-          to {
-              opacity: 1;
-              transform: scale(1, 1);
-          }
-      }
-    </style>
   </head>
   <body>
     <div id="apps">
@@ -124,6 +101,19 @@
           <div class="col-md-8">
             <div class="jumbotron jumbotron-asphalt text-centered">
               <h1>User Info</h1>
+              <div class="col-md-3"></div>
+              <div class="col-md-6" center>
+
+                <input type="text" class="form-control login-field" value="" placeholder="Enter your name" id="fname">
+                <input type="text" class="form-control login-field" value="" placeholder="Income" id="income">
+                <input type="text" class="form-control login-field" value="" placeholder="Expense" id="expense">
+                <a class="btn btn-block btn-lg btn-info" onclick="click()">Submit</a>
+                <script>
+                  function click(){
+
+                  }
+                </script>
+              </div>
             </div>
           </div>
           <div class="col-md-2"></div>
