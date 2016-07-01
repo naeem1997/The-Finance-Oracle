@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>The Finance Oracle</title>
+    <meta name="description" content="Helping users manage stocks and provide personal financial solutions."/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+            chrome.management.getAll(getAllCallback);
+          });
+
+          var getAllCallback = function(list) {
+            var apps = document.getElementById("apps");
+            for(var i in list) {
+              // we don't want to do anything with extensions yet.
+              var extInf = list[i];
+              if(extInf.isApp && extInf.enabled) {
+                var app = document.createElement("div");
+
+                var img = new Image();
+                img.className = "image";
+                img.src = find128Image(extInf.icons);
+                img.addEventListener("click", (function(ext) {
+                  return function() {
+                    chrome.management.launchApp(ext.id);
+                  };
+                })(extInf));
+
+                var name = document.createElement("div");
+                name.className = "name";
+                name.textContent = extInf.name;
+
+                app.className = "app";
+                app.appendChild(img);
+                app.appendChild(name);
+                apps.appendChild(app);
+              }
+            }
+          };
+          var find128Image = function(icons) {
+            for(var icon in icons) {
+              if(icons[icon].size == "128") {
+                return icons[icon].url;
+              }
+            }
+
+            return "/noicon.png";
+          };
+        </script>
+    <!-- Loading Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Loading Flat UI -->
+    <link href="css/flat-ui.css" rel="stylesheet">
+    <link href="css/utdrares.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="dist/js/vendor/html5shiv.js"></script>
+      <script src="dist/js/vendor/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+      #main {
+          text-align: center;
+          width: 600px;
+          margin: 0 auto;
+          border-radius: 5px;
+      }
+      #oracle {
+        font-size: 36px;
+      }
+      #oracle:hover {
+        background-color: #79CDCD;
+      }
+      a:hover {
+          background-color: #79CDCD;
+      }
+      @keyframes fadeAndScale {
+          from {
+              opacity: 0;
+              transform: scale(.9, .9);
+          }
+          to {
+              opacity: 1;
+              transform: scale(1, 1);
+          }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="apps">
+
+    </div>
+    <header>
+      <!-- Navbar =======-->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">The Finance Oracle</a>
+          </div>
+			
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+				<li><a href="stocks.html">Stocks</a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+    </header>
+  <div class="container">
+    <section>
+        <div class="row">
+          <div class="col-md-2">
+		  </div>
+          <div class="col-md-8">
+            <div class="jumbotron jumbotron-asphalt text-centered">
+				<div class="row">
+					<div class="col-md-3">
+						<button type="button" class="btn btn-block btn-lg btn-success">Demo Mode</button>
+					</div>
+					<div class="col-md-8">
+					</div>
+					<div class="col-md-1"></div>
+				</div>
+				<h1>The Finance Oracle</h1>
+				  <div class="text-centered" id="groupform">
+					<input type="text" class="form-control login-field" value="" placeholder="Enter your name" id="fname">
+					<input type="text" class="form-control login-field" value="" placeholder="Income" id="income">
+					<input type="text" class="form-control login-field" value="" placeholder="Expense" id="expense">
+					<p id="oracle" onClick="myFunction()">Click (or Tap) Here!</p>
+				  </div>
+              <!---- Demo Algorithm for demonstartion purposes only ----->
+					<script>
+					  function myFunction(){
+						var income = document.getElementById("income").value;
+						var expense = document.getElementById("expense").value;
+						var change = (income-expense);
+						  var text = ["Invest money in property","Deposit certain percentage of your money in savings!","Priortize interests, mortgages, loans, and things that affect your credit score!","Ensure you have substantial amount for your 401k!","Focus your purchasing power to the things needed than the things desired!","Proportion a good amount of your income for familial needs!"];
+						if(change>=0 && change<30000){
+						  document.getElementById("oracle").innerHTML = text[0];
+						}else if (change>=30000 && change<60000) {
+						  document.getElementById("oracle").innerHTML = text[1];
+						}else if(change>=60000 && change<85000) {
+						  document.getElementById("oracle").innerHTML = text[2];
+						}else if(change>=85000 && change<100000){
+						  document.getElementById("oracle").innerHTML = text[3];
+						}else if(change>=100000 && change<110000){
+						  document.getElementById("oracle").innerHTML = text[4];
+						}else{
+						  document.getElementById("oracle").innerHTML = text[5];
+						}
+					  }
+					</script>
+                <!----- Demo ends ------>
+            </div>
+            <p font-size=18px>This is the button for the page of the machine learning patform by Microsoft Azure for providing insight into real time financial status developed by Sumedh Saurabh and Naeem Shaikh.</p>
+            <a href="http://gallery.azureml.net/Details/c5d01770a30c4a2cbe446ab725c900fa" class="btn btn-block btn-lg btn-info">Oracle Analytics Algorithm</a>
+          </div>
+          <div class="col-md-2"></div>
+
+      </section>
+    </div>
+
+    <!-- Load JS here for greater good =============================-->
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/flat-ui.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
