@@ -1,2 +1,2 @@
-# 8Finance
- Financial Problem Solver
+# The Finance Oracle
+ A Financial Problem Solver
