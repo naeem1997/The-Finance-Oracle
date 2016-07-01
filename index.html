@@ -136,18 +136,26 @@
 				</div>
 				<h1>The Finance Oracle</h1>
 				  <div class="text-centered" id="groupform">
-					<input type="text" class="form-control login-field" value="" placeholder="Enter your name" id="fname">
-					<input type="text" class="form-control login-field" value="" placeholder="Income" id="income">
-					<input type="text" class="form-control login-field" value="" placeholder="Expense" id="expense">
-					<p id="oracle" onClick="myFunction()">Click (or Tap) Here!</p>
+					  <div class="row">
+						<div class="col-md-3">
+						</div>
+						<div class="col-md-6 jumbotron">
+							<input type="text" class="form-control" value="" placeholder="Enter your name" id="fname">
+							<input type="text" class="form-control" value="" placeholder="Income" id="income">
+							<input type="text" class="form-control" value="" placeholder="Expense" id="expense">
+						</div>
+						<div class="col-md-3">
+						</div>
+					  </div>
+					  <p id="oracle" onClick="myFunction()">Click (or Tap) Here!</p>
 				  </div>
-              <!---- Demo Algorithm for demonstartion purposes only ----->
+                <!---- Demo Algorithm for demonstartion purposes only ----->
 					<script>
 					  function myFunction(){
 						var income = document.getElementById("income").value;
 						var expense = document.getElementById("expense").value;
 						var change = (income-expense);
-						  var text = ["Invest money in property","Deposit certain percentage of your money in savings!","Priortize interests, mortgages, loans, and things that affect your credit score!","Ensure you have substantial amount for your 401k!","Focus your purchasing power to the things needed than the things desired!","Proportion a good amount of your income for familial needs!"];
+						var text = ["Invest money in property","Deposit certain percentage of your money in savings!","Priortize interests, mortgages, loans, and things that affect your credit score!","Ensure you have substantial amount for your 401k!","Focus your purchasing power to the things needed than the things desired!","Proportion a good amount of your income for familial needs!"];
 						if(change>=0 && change<30000){
 						  document.getElementById("oracle").innerHTML = text[0];
 						}else if (change>=30000 && change<60000) {
