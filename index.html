@@ -10,7 +10,6 @@
       document.addEventListener("DOMContentLoaded", function() {
             chrome.management.getAll(getAllCallback);
           });
-
           var getAllCallback = function(list) {
             var apps = document.getElementById("apps");
             for(var i in list) {
@@ -18,7 +17,6 @@
               var extInf = list[i];
               if(extInf.isApp && extInf.enabled) {
                 var app = document.createElement("div");
-
                 var img = new Image();
                 img.className = "image";
                 img.src = find128Image(extInf.icons);
@@ -27,11 +25,9 @@
                     chrome.management.launchApp(ext.id);
                   };
                 })(extInf));
-
                 var name = document.createElement("div");
                 name.className = "name";
                 name.textContent = extInf.name;
-
                 app.className = "app";
                 app.appendChild(img);
                 app.appendChild(name);
@@ -45,7 +41,6 @@
                 return icons[icon].url;
               }
             }
-
             return "/noicon.png";
           };
         </script>
@@ -114,7 +109,6 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
               <li><a href="stocks.html">Stocks</a></li>
-              <a href="#fakelink" class="btn btn-block btn-lg btn-info">Demo Mode</a>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -123,7 +117,9 @@
   <div class="container">
     <section>
         <div class="row">
-          <div class="col-md-2"></div>
+          <div class="col-md-2">
+            <a href="#fakelink" class="btn btn-block btn-lg btn-info">Demo Mode</a>
+          </div>
           <div class="col-md-8">
             <div class="jumbotron jumbotron-asphalt text-centered">
               <h1>The Finance Oracle</h1>
